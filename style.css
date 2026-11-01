@@ -1237,3 +1237,39 @@ main {
     margin-top: 0;
   }
 }
+
+/* Phone in "Desktop site" mode: wide but tall viewport. Keep the login page compact and readable. */
+@media (min-width: 900px) and (orientation: portrait) {
+  .login {
+    min-height: min(100vh, 760px);
+  }
+  .login-side {
+    padding: 36px 44px;
+  }
+  .login-pitch h1 {
+    font-size: 56px;
+  }
+  .login-card {
+    max-width: 520px;
+    padding: 40px;
+  }
+  .login-card h2 {
+    font-size: 32px;
+  }
+  .login-card .sm,
+  .login-note,
+  .err {
+    font-size: 16px;
+  }
+  .lbl {
+    font-size: 17px;
+  }
+  .in {
+    padding: 17px 16px;
+    font-size: 18px;
+  }
+  .login-card .full {
+    padding: 19px;
+    font-size: 19px;
+  }
+}
