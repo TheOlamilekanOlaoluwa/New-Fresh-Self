@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FreshShelf is a walk-in provision store. Scan & Go as you shop, or reserve a basket for pickup.">
+<meta name="theme-color" content="#14532d">
+<title>FreshShelf – Walk-in Provision Store</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%229%22%20fill%3D%22%2314532d%22/%3E%3Cpath%20d%3D%22M9%2014h14l-1.6%209a2%202%200%200%201-2%201.6h-6.8a2%202%200%200%201-2-1.6L9%2014Z%22%20fill%3D%22%23fff%22/%3E%3Cpath%20d%3D%22M12%2014c0-4%202-6%204-6s4%202%204%206%22%20fill%3D%22none%22%20stroke%3D%22%23f5b83d%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ============ LOGIN PAGE (shown first) ============ -->
+<section class="login hidden" id="login" aria-labelledby="login-title">
+  <aside class="login-side">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 32 32"><path d="M7 13h18l-2 10.5a2.5 2.5 0 0 1-2.5 2H11.5a2.5 2.5 0 0 1-2.5-2L7 13Z" fill="#fff"/><path d="M11 13c0-5 2.2-8 5-8s5 3 5 8" fill="none" stroke="#f5b83d" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+      <span class="brand-name">Fresh<b>Shelf</b></span>
+    </div>
+    <div class="login-pitch">
+      <p class="eyebrow">Walk-in provision store</p>
+      <h1>Shop smarter,<br><em>skip the queue.</em></h1>
+      <p class="hero-sub">Scan items as you shop or reserve a basket for pickup. Sign in to get started.</p>
+      <ul class="perks">
+        <li><span>⚡</span>Skip the queue</li>
+        <li><span>🧺</span>Ready in minutes</li>
+        <li><span>💳</span>Card or counter</li>
+      </ul>
+    </div>
+  </aside>
+  <div class="login-main">
+    <form class="login-card" id="login-form" novalidate>
+      <h2 id="login-title">Welcome to FreshShelf</h2>
+      <p class="sm">Enter your details to continue to the store.</p>
+      <div class="fld">
+        <label class="lbl" for="lf-name">Full name</label>
+        <input class="in" id="lf-name" name="name" autocomplete="name" placeholder="e.g. Ada Okafor">
+        <p class="err" id="err-name"></p>
+      </div>
+      <div class="fld">
+        <label class="lbl" for="lf-email">Email address</label>
+        <input class="in" id="lf-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+        <p class="err" id="err-email"></p>
+      </div>
+      <div class="fld">
+        <label class="lbl" for="lf-phone">Phone number</label>
+        <input class="in" id="lf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +234 801 234 5678">
+        <p class="err" id="err-phone"></p>
+      </div>
+      <div class="fld">
+        <label class="lbl" for="lf-phone">Password</label>
+        <input class="in" id="lf-password" name="password" type="password" inputmode="password" autocomplete="new-password" placeholder="e.g. ...........">
+        <p class="err" id="err-password"></p>
+      </div>
+      <button class="full" type="submit">Sign in</button>
+      <p class="note login-note">Demo sign-in: your details are saved only in this browser.</p>
+    </form>
+  </div>
+</section>
+
+<div id="app" class="hidden">
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="./" aria-label="FreshShelf home">
+      <span class="brand-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 32 32"><path d="M7 13h18l-2 10.5a2.5 2.5 0 0 1-2.5 2H11.5a2.5 2.5 0 0 1-2.5-2L7 13Z" fill="#fff"/><path d="M11 13c0-5 2.2-8 5-8s5 3 5 8" fill="none" stroke="#f5b83d" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+      <span class="brand-name">Fresh<b>Shelf</b></span>
+    </a>
+    <div class="seg" role="tablist" aria-label="Fulfillment mode">
+      <button role="tab" data-mode="scan">Scan &amp; Go</button>
+      <button role="tab" data-mode="pickup">Pickup</button>
+    </div>
+    <div class="bar-right">
+      <button class="cartbtn" id="cartbtn" aria-label="Open cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.400a2 2 0 0 0 2 1.6h7.800a2 2 0 0 0 2-1.5L21 8H6"/></svg>
+      <span id="cartsum">$0.00</span><span class="badge hidden" id="cartcount">0</span>
+    </button>
+      <button class="signout" id="signout" type="button">Sign out</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <p class="eyebrow" id="welcome">Walk-in provision store</p>
+    <h1>Fresh groceries,<br><em>your way.</em></h1>
+    <p class="hero-sub" id="heroSub"></p>
+    <ul class="perks">
+      <li><span>⚡</span>Skip the queue</li>
+      <li><span>🧺</span>Ready in minutes</li>
+      <li><span>💳</span>Card or counter</li>
+    </ul>
+  </div>
+</section>
+
+<main class="wrap" id="main" tabindex="-1"></main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div><strong>FreshShelf</strong><span>Everyday provisions, fresh on the shelf.</span></div>
+    <small>Demo store · No real payments are processed.</small>
+  </div>
+</footer>
+</div><!-- /#app -->
+
+<div id="modalroot"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
